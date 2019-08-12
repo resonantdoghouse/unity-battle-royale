@@ -41,5 +41,6 @@ MonoBehaviour:
   - AddKill
   - WinGame
   - Heal
+  - GiveAmmo
   DisableAutoOpenWizard: 1
   ShowSettings: 0

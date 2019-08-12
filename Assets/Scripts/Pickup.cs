@@ -23,6 +23,17 @@ public class Pickup : MonoBehaviour
     {
       // get the player
       PlayerController player = GameManager.instance.GetPlayer(other.gameObject);
+      if (type == PickupType.Health)
+      {
+        player.photonView.RPC("Heal", player.photonPlayer, value);
+      }
+      else if (type == PickupType.Ammo)
+      {
+        player.photonView.RPC("GiveAmmo", player.photonPlayer, value);
+      }
+
+      // destroy the object
+      PhotonNetwork.Destroy(gameObject);
 
     }
   }
