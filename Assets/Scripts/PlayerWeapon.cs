@@ -36,6 +36,7 @@ public class PlayerWeapon : MonoBehaviour
     lastShootTime = Time.time;
 
     // update ammo ui
+    GameUI.instance.UpdateAmmoText();
 
     // spawn bullet
     player.photonView.RPC("SpawnBullet", RpcTarget.All, bulletSpawnPos.position, Camera.main.transform.forward);
@@ -62,6 +63,7 @@ public class PlayerWeapon : MonoBehaviour
     curAmmo = Mathf.Clamp(curAmmo + ammoToGive, 0, maxAmmo);
 
     // update ammo UI
+    GameUI.instance.UpdateAmmoText();
   }
 
 }
