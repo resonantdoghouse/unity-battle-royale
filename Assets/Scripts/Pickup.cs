@@ -14,6 +14,12 @@ public class Pickup : MonoBehaviour
   public PickupType type;
   public int value;
 
+  private float rotateSpeed = 0.5f;
+
+  void Update(){
+    transform.Rotate(0, rotateSpeed, 0, Space.World);
+  }
+
   void OnTriggerEnter(Collider other)
   {
     if (!PhotonNetwork.IsMasterClient)
